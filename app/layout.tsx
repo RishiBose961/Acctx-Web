@@ -160,7 +160,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
     >
-      <head>
+      <body className="min-h-full flex flex-col bg-[#090a0f] text-zinc-100 bg-mesh">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSoftware) }}
@@ -173,8 +173,6 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
         />
-      </head>
-      <body className="min-h-full flex flex-col bg-[#090a0f] text-zinc-100 bg-mesh">
         {children}
       </body>
     </html>
