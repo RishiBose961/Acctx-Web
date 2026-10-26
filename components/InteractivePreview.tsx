@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   BellIcon,
   CheckCircle2Icon,
@@ -15,6 +15,43 @@ import {
 
 type TabType = "dashboard" | "pin" | "bills" | "notifications" | "analytics";
 
+function useAnimatedCount(targetValue: number, durationMs = 1500) {
+  const [currentValue, setCurrentValue] = useState(0);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setCurrentValue(targetValue);
+      return;
+    }
+
+    let startTime: number | null = null;
+    let animationFrameId: number;
+
+    const easeOutExpo = (t: number): number => {
+      return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+    };
+
+    const step = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / durationMs, 1);
+      const easedProgress = easeOutExpo(progress);
+
+      setCurrentValue(Math.floor(easedProgress * targetValue));
+
+      if (progress < 1) {
+        animationFrameId = requestAnimationFrame(step);
+      } else {
+        setCurrentValue(targetValue);
+      }
+    };
+
+    animationFrameId = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [targetValue, durationMs]);
+
+  return currentValue;
+}
+
 export function InteractivePreview() {
   const [activeTab, setActiveTab] = useState<TabType>("dashboard");
   const [isPrivacyMasked, setIsPrivacyMasked] = useState(false);
@@ -25,6 +62,11 @@ export function InteractivePreview() {
     b2: false,
     b3: false,
   });
+
+  const animatedBalance = useAnimatedCount(18450, 1600);
+  const animatedIncome = useAnimatedCount(6200, 1400);
+  const animatedExpenses = useAnimatedCount(2840, 1500);
+  const animatedDues = useAnimatedCount(640, 1300);
 
   const handleKeypadPress = (val: string) => {
     if (val === "clear") {
@@ -132,7 +174,7 @@ export function InteractivePreview() {
                     {isPrivacyMasked ? (
                       <span className="tracking-widest text-emerald-400">••••••••</span>
                     ) : (
-                      "$18,450.00"
+                      `$${animatedBalance.toLocaleString("en-US")}.00`
                     )}
                   </div>
                 </div>
@@ -148,24 +190,24 @@ export function InteractivePreview() {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-4">
                   <span className="text-xs font-medium text-zinc-400">Total Monthly Income</span>
-                  <div className="mt-2 text-2xl font-bold text-emerald-400">
-                    {isPrivacyMasked ? "••••" : "+$6,200.00"}
+                  <div className="mt-2 text-2xl font-bold text-emerald-400 font-mono">
+                    {isPrivacyMasked ? "••••" : `+$${animatedIncome.toLocaleString("en-US")}.00`}
                   </div>
                   <span className="text-[11px] text-zinc-500">2 active income sources</span>
                 </div>
 
                 <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-4">
                   <span className="text-xs font-medium text-zinc-400">Total Expenses</span>
-                  <div className="mt-2 text-2xl font-bold text-rose-400">
-                    {isPrivacyMasked ? "••••" : "-$2,840.00"}
+                  <div className="mt-2 text-2xl font-bold text-rose-400 font-mono">
+                    {isPrivacyMasked ? "••••" : `-$${animatedExpenses.toLocaleString("en-US")}.00`}
                   </div>
                   <span className="text-[11px] text-zinc-500">Across 14 categories</span>
                 </div>
 
                 <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-4">
                   <span className="text-xs font-medium text-zinc-400">Active Dues & Bills</span>
-                  <div className="mt-2 text-2xl font-bold text-amber-400">
-                    {isPrivacyMasked ? "••••" : "$640.00"}
+                  <div className="mt-2 text-2xl font-bold text-amber-400 font-mono">
+                    {isPrivacyMasked ? "••••" : `$${animatedDues.toLocaleString("en-US")}.00`}
                   </div>
                   <span className="text-[11px] text-zinc-500">3 bills pending this cycle</span>
                 </div>

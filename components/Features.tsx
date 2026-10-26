@@ -1,3 +1,6 @@
+"use client";
+
+import { useRef, useState } from "react";
 import {
   BarChart3Icon,
   BellIcon,
@@ -6,10 +9,17 @@ import {
   LockIcon,
   RefreshCwIcon,
   ShieldIcon,
-  SparklesIcon,
+  IconProps,
 } from "./icons";
 
-const features = [
+interface FeatureItem {
+  icon: (props: IconProps) => React.JSX.Element;
+  title: string;
+  desc: string;
+  tag: string;
+}
+
+const features: FeatureItem[] = [
   {
     icon: LockIcon,
     title: "Master 6-Digit PIN Security",
@@ -48,6 +58,72 @@ const features = [
   },
 ];
 
+function FeatureCard({ item }: { item: FeatureItem }) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [mousePos, setMousePos] = useState<{ x: number; y: number } | null>(null);
+  const Icon = item.icon;
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    setMousePos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  };
+
+  const handleMouseLeave = () => {
+    setMousePos(null);
+  };
+
+  return (
+    <div
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="group relative rounded-2xl border border-white/[0.08] bg-white/[0.02] p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-emerald-500/10 overflow-hidden"
+    >
+      {/* Linear.app Style Mouse-Following Spotlight Glow */}
+      {mousePos && (
+        <>
+          <div
+            className="pointer-events-none absolute -inset-px rounded-2xl transition-opacity duration-300"
+            style={{
+              background: `radial-gradient(350px circle at ${mousePos.x}px ${mousePos.y}px, rgba(16, 185, 129, 0.15), transparent 80%)`,
+            }}
+          />
+          <div
+            className="pointer-events-none absolute -inset-px rounded-2xl border border-emerald-400/50 transition-opacity duration-300"
+            style={{
+              maskImage: `radial-gradient(200px circle at ${mousePos.x}px ${mousePos.y}px, black 30%, transparent 80%)`,
+              WebkitMaskImage: `radial-gradient(200px circle at ${mousePos.x}px ${mousePos.y}px, black 30%, transparent 80%)`,
+            }}
+          />
+        </>
+      )}
+
+      {/* Card Content */}
+      <div className="relative z-10">
+        <div className="flex items-center justify-between mb-5">
+          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 transition-transform group-hover:scale-110">
+            <Icon size={20} />
+          </div>
+          <span className="rounded-full bg-white/[0.05] border border-white/[0.08] px-2.5 py-0.5 text-[10px] font-semibold text-zinc-400">
+            {item.tag}
+          </span>
+        </div>
+
+        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">
+          {item.title}
+        </h3>
+        <p className="text-sm leading-relaxed text-zinc-400">
+          {item.desc}
+        </p>
+      </div>
+    </div>
+  );
+}
+
 export function Features() {
   return (
     <section id="features" className="relative py-20 sm:py-28 border-t border-white/[0.06] bg-[#0b0d14]">
@@ -66,33 +142,11 @@ export function Features() {
           </p>
         </div>
 
-        {/* Bento Grid Features */}
+        {/* Bento Grid Features with Spotlight Hover */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((item, idx) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={idx}
-                className="group relative rounded-2xl border border-white/[0.08] bg-white/[0.02] p-7 transition-all duration-300 hover:border-emerald-500/30 hover:bg-white/[0.04] hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-500/5"
-              >
-                <div className="flex items-center justify-between mb-5">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 transition-transform group-hover:scale-110">
-                    <Icon size={20} />
-                  </div>
-                  <span className="rounded-full bg-white/[0.05] border border-white/[0.08] px-2.5 py-0.5 text-[10px] font-semibold text-zinc-400">
-                    {item.tag}
-                  </span>
-                </div>
-
-                <h3 className="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-sm leading-relaxed text-zinc-400">
-                  {item.desc}
-                </p>
-              </div>
-            );
-          })}
+          {features.map((item, idx) => (
+            <FeatureCard key={idx} item={item} />
+          ))}
         </div>
       </div>
     </section>
