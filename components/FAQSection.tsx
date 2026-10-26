@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDownIcon, SparklesIcon } from "./icons";
+import { ArrowUpRightIcon, ChevronDownIcon, GithubIcon, SparklesIcon } from "./icons";
 import { faqs } from "./faqData";
 
 export function FAQSection() {
@@ -59,6 +59,58 @@ export function FAQSection() {
               </div>
             );
           })}
+        </div>
+
+        {/* Still Have Questions Footer Card */}
+        <div className="mt-12 rounded-2xl border border-white/[0.08] bg-gradient-to-r from-emerald-950/20 via-zinc-900/40 to-[#0e111a] p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 shadow-xl">
+          <div className="space-y-1.5">
+            <h3 className="text-base sm:text-lg font-bold text-white">
+              Still have questions about Acctx?
+            </h3>
+            <p className="text-xs sm:text-sm text-zinc-400 max-w-xl leading-relaxed">
+              Can&apos;t find what you&apos;re looking for? Explore our comprehensive{" "}
+              <a
+                href="https://github.com/ayanbanerjee-png/Acctx#readme"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-emerald-400 underline underline-offset-2 hover:text-emerald-300 font-medium transition-colors"
+              >
+                Documentation on GitHub
+              </a>{" "}
+              or get direct help by{" "}
+              <a
+                href="https://github.com/ayanbanerjee-png/Acctx/issues"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-emerald-400 underline underline-offset-2 hover:text-emerald-300 font-medium transition-colors"
+              >
+                opening an issue
+              </a>.
+            </p>
+          </div>
+
+          <div className="flex items-center gap-3 shrink-0">
+            <a
+              href="https://github.com/ayanbanerjee-png/Acctx"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-2.5 text-xs font-semibold text-zinc-200 transition-all hover:bg-white/[0.08] hover:text-white"
+              aria-label="View Acctx GitHub Repository"
+            >
+              <GithubIcon size={15} />
+              <span>GitHub Docs</span>
+            </a>
+            <a
+              href="https://github.com/ayanbanerjee-png/Acctx/issues"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-xl bg-emerald-500 px-4 py-2.5 text-xs font-bold text-black transition-all hover:bg-emerald-400 shadow-lg shadow-emerald-500/20"
+              aria-label="Ask questions on Acctx GitHub issues"
+            >
+              <span>Ask on GitHub</span>
+              <ArrowUpRightIcon size={14} className="stroke-[2.5]" />
+            </a>
+          </div>
         </div>
       </div>
     </section>

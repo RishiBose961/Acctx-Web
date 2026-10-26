@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   BellIcon,
   CheckCircle2Icon,
@@ -15,10 +15,15 @@ import {
 
 type TabType = "dashboard" | "pin" | "bills" | "notifications" | "analytics";
 
-function useAnimatedCount(targetValue: number, durationMs = 1500) {
+function useAnimatedCount(targetValue: number, durationMs = 1500, trigger = true) {
   const [currentValue, setCurrentValue] = useState(0);
 
   useEffect(() => {
+    if (!trigger) {
+      setCurrentValue(0);
+      return;
+    }
+
     if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       setCurrentValue(targetValue);
       return;
@@ -47,7 +52,7 @@ function useAnimatedCount(targetValue: number, durationMs = 1500) {
 
     animationFrameId = requestAnimationFrame(step);
     return () => cancelAnimationFrame(animationFrameId);
-  }, [targetValue, durationMs]);
+  }, [targetValue, durationMs, trigger]);
 
   return currentValue;
 }
@@ -63,10 +68,36 @@ export function InteractivePreview() {
     b3: false,
   });
 
-  const animatedBalance = useAnimatedCount(18450, 1600);
-  const animatedIncome = useAnimatedCount(6200, 1400);
-  const animatedExpenses = useAnimatedCount(2840, 1500);
-  const animatedDues = useAnimatedCount(640, 1300);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    if (!sectionRef.current) return;
+    if (typeof IntersectionObserver === "undefined") {
+      setIsInView(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  const shouldAnimate = isInView && activeTab === "dashboard";
+
+  const animatedBalance = useAnimatedCount(18450, 1600, shouldAnimate);
+  const animatedIncome = useAnimatedCount(6200, 1400, shouldAnimate);
+  const animatedExpenses = useAnimatedCount(2840, 1500, shouldAnimate);
+  const animatedDues = useAnimatedCount(640, 1300, shouldAnimate);
 
   const handleKeypadPress = (val: string) => {
     if (val === "clear") {
@@ -91,7 +122,7 @@ export function InteractivePreview() {
   };
 
   return (
-    <section id="preview" className="relative py-20 sm:py-28 overflow-hidden">
+    <section ref={sectionRef} id="preview" className="relative py-20 sm:py-28 overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-12">

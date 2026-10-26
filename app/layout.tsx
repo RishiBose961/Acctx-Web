@@ -38,6 +38,9 @@ export const metadata: Metadata = {
     "money manager without cloud",
     "open source personal finance",
     "acctx finance",
+    "free YNAB alternative",
+    "offline Mint alternative",
+    "local personal finance without bank linking",
     "windows budgeting app",
     "macOS finance tracker",
     "linux personal finance software",
@@ -95,10 +98,13 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: "Acctx",
-    operatingSystem: "Windows 10, Windows 11, macOS 12+, Linux",
+    operatingSystem: "Windows 10, Windows 11, macOS 12+, Linux (Ubuntu, Debian, Fedora, Arch)",
     applicationCategory: "FinanceApplication",
+    applicationSubCategory: "Personal Finance & Recurring Bill Tracker",
+    softwareVersion: "1.0.0",
+    fileSize: "85MB",
     description:
-      "Modern, 100% offline desktop personal finance & smart recurring bill manager with local AES-256 encryption.",
+      "Modern, 100% offline desktop personal finance & smart recurring bill manager with local AES-256 encryption, Master PIN authentication, and zero cloud telemetry.",
     offers: {
       "@type": "Offer",
       price: "0",
@@ -106,10 +112,33 @@ export default function RootLayout({
       availability: "https://schema.org/InStock",
     },
     downloadUrl: "https://github.com/ayanbanerjee-png/Acctx/releases",
+    screenshot: "https://res.cloudinary.com/nb1pqpkh/image/upload/v1793035677/Acctx_26-10-2026_19_51_24.png",
+    featureList: [
+      "100% Offline with Zero Network Telemetry",
+      "Local AES-256-GCM Cryptographic Vault",
+      "Master 6-Digit PIN Security Lockout with Cooldown Timers",
+      "Automated Recurring Bill Cycles and Advancement",
+      "Native Desktop OS Urgency Notifications",
+      "Visual Analytics and Cash Flow Momentum Trends",
+      "One-Click Portable Encrypted BSON Data Backups",
+    ],
     author: {
       "@type": "Person",
       name: "Ayan Banerjee",
       url: "https://github.com/ayanbanerjee-png",
+    },
+  };
+
+  const jsonLdWebSite = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Acctx",
+    url: siteUrl,
+    description: "Private, offline-first personal finance and smart bill management desktop app.",
+    publisher: {
+      "@type": "Organization",
+      name: "Acctx",
+      url: siteUrl,
     },
   };
 
@@ -135,6 +164,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSoftware) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdWebSite) }}
         />
         <script
           type="application/ld+json"

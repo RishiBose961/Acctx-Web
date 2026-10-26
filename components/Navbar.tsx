@@ -30,7 +30,10 @@ export function Navbar() {
             Features
           </a>
           <a href="#preview" className="transition-colors hover:text-white">
-            Live Preview
+            Simulation
+          </a>
+          <a href="#gallery" className="transition-colors hover:text-white">
+            App UI
           </a>
           <a href="#security" className="transition-colors hover:text-white">
             Security & Privacy
@@ -98,7 +101,14 @@ export function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
               className="hover:text-emerald-400 py-1"
             >
-              Live Preview
+              Simulation
+            </a>
+            <a
+              href="#gallery"
+              onClick={() => setMobileMenuOpen(false)}
+              className="hover:text-emerald-400 py-1"
+            >
+              App UI Gallery
             </a>
             <a
               href="#security"

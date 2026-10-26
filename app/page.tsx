@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { InteractivePreview } from "@/components/InteractivePreview";
+import { DesktopGallery } from "@/components/DesktopGallery";
 import { Features } from "@/components/Features";
 import { SecurityShowcase } from "@/components/SecurityShowcase";
 import { Comparison } from "@/components/Comparison";
@@ -18,6 +19,7 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <InteractivePreview />
+        <DesktopGallery />
         <Features />
         <SecurityShowcase />
         <Comparison />

@@ -27,7 +27,8 @@ export function Footer() {
               <div className="font-semibold text-white uppercase tracking-wider text-[11px] mb-3">Product</div>
               <ul className="space-y-2">
                 <li><a href="#features" className="hover:text-white transition-colors">Features</a></li>
-                <li><a href="#preview" className="hover:text-white transition-colors">Live Preview</a></li>
+                <li><a href="#preview" className="hover:text-white transition-colors">Simulation</a></li>
+                <li><a href="#gallery" className="hover:text-white transition-colors">Desktop UI Gallery</a></li>
                 <li><a href="#download" className="hover:text-white transition-colors">Download App</a></li>
                 <li><a href="#security" className="hover:text-white transition-colors">Security & Privacy</a></li>
               </ul>
