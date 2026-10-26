@@ -27,8 +27,11 @@ body {
   color: var(--foreground);
   font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   overflow-x: hidden;
-  selection-background-color: #10b981;
-  selection-color: #000000;
+}
+
+::selection {
+  background-color: #10b981;
+  color: #000000;
 }
 
 /* Custom background mesh */
