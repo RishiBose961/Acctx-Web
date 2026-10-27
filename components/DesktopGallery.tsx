@@ -1,15 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
+import { useState } from "react";
 import {
-  BarChart3Icon,
-  BellIcon,
-  HardDriveIcon,
-  LockIcon,
-  RefreshCwIcon,
-  ShieldIcon,
-  SparklesIcon,
+    SparklesIcon
 } from "./icons";
 
 interface ScreenshotItem {
@@ -126,7 +120,7 @@ export function DesktopGallery() {
     <section id="gallery" className="relative py-20 sm:py-28 overflow-hidden bg-[#07090e]">
       {/* Subtle Ambient Radial Lighting */}
       <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
-        <div className="h-[550px] w-[800px] rounded-full bg-emerald-500/10 blur-[160px]" />
+        <div className="h-137.5 w-200 rounded-full bg-emerald-500/10 blur-[160px]" />
       </div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

@@ -147,34 +147,6 @@ export function DownloadSection() {
           })}
         </div>
 
-        {/* Verification & Trust Footer */}
-        <div className="mt-14 rounded-xl border border-white/10 bg-white/[0.02] p-6 text-center">
-          <div className="flex flex-wrap items-center justify-center gap-8 text-xs font-medium text-zinc-400">
-            <div className="flex items-center gap-2">
-              <CheckCircle2Icon size={16} className="text-emerald-400" />
-              <span>VirusTotal Verified 100% Clean</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <LockIcon size={16} className="text-emerald-400" />
-              <span>SHA-256 Checksums Available</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <ShieldIcon size={16} className="text-emerald-400" />
-              <span>Zero Bundled Adware or Telemetry</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <GithubIcon size={16} className="text-zinc-300" />
-              <a
-                href="https://github.com/ayanbanerjee-png/Acctx/releases"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline underline-offset-4 hover:text-white"
-              >
-                View All Releases on GitHub
-              </a>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

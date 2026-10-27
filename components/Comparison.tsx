@@ -14,12 +14,6 @@ const comparisonData = [
     spreadsheets: "Office 365 or Free",
   },
   {
-    feature: "Encryption Standard",
-    acctx: "AES-256-GCM (Local Vault)",
-    cloud: "Server-side TLS (Vendor has keys)",
-    spreadsheets: "None / Weak Password",
-  },
-  {
     feature: "Master PIN Lock & Anti-Brute Force",
     acctx: true,
     cloud: false,
@@ -53,7 +47,7 @@ const comparisonData = [
 
 export function Comparison() {
   return (
-    <section id="comparison" className="relative py-20 sm:py-28 border-t border-white/[0.06] bg-[#090b11]">
+    <section id="comparison" className="relative py-20 sm:py-28 border-t border-white/6 bg-[#090b11]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3.5 py-1 text-xs font-semibold text-emerald-400 mb-4">
@@ -86,9 +80,9 @@ export function Comparison() {
                 <th className="py-4 px-6 font-semibold text-zinc-400">Spreadsheets (Excel/Sheets)</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-white/[0.05]">
+            <tbody className="divide-y divide-white/5">
               {comparisonData.map((row, idx) => (
-                <tr key={idx} className="hover:bg-white/[0.02] transition-colors">
+                <tr key={idx} className="hover:bg-white/2 transition-colors">
                   <td className="py-4 px-6 font-medium text-white">{row.feature}</td>
 
                   {/* Acctx Column */}

@@ -25,8 +25,8 @@ export function SecurityShowcase() {
               <div className="mt-8 space-y-4">
                 {[
                   {
-                    title: "AES-256-GCM Local Cryptography",
-                    desc: "Every transaction, note, and bill is encrypted with symmetric AES-256 before being committed to your storage drive.",
+                    title: "Local Cryptography",
+                    desc: "Every transaction, note, and bill is encrypted before being committed to your storage drive.",
                   },
                   {
                     title: "Master PIN with Salted Hashing",
@@ -83,7 +83,7 @@ export function SecurityShowcase() {
                     <ShieldIcon size={18} />
                   </div>
                   <div>
-                    <div className="text-xs font-bold text-white">2. AES-256-GCM Cipher</div>
+                    <div className="text-xs font-bold text-white">2.  Cipher</div>
                     <div className="text-[11px] text-zinc-400">Military-grade authenticated encryption</div>
                   </div>
                 </div>

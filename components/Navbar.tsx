@@ -1,26 +1,24 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useState } from "react";
-import { DownloadIcon, GithubIcon, ShieldIcon } from "./icons";
+import { DownloadIcon, GithubIcon } from "./icons";
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-white/[0.08] bg-[#090a0f]/80 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 w-full border-b border-white/8 bg-[#090a0f]/80 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Brand Logo */}
         <a href="#" className="flex items-center gap-2.5 group">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400 to-emerald-600 p-0.5 shadow-lg shadow-emerald-500/20 transition-transform group-hover:scale-105">
-            <div className="flex h-full w-full items-center justify-center rounded-[10px] bg-[#090a0f]/90">
-              <ShieldIcon className="h-4 w-4 text-emerald-400" />
-            </div>
+          <div className="flex h-9 w-9 items-center justify-center rounded-xlp-0.5 shadow-lg shadow-emerald-500/20 transition-transform group-hover:scale-105">
+           
+             <img src="/White-Logo.png" alt="loading" className="rounded-full" />
+            
           </div>
           <div className="flex items-center gap-2">
             <span className="text-xl font-bold tracking-tight text-white">Acctx</span>
-            <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-emerald-400 border border-emerald-500/20">
-              Desktop
-            </span>
           </div>
         </a>
 
@@ -49,10 +47,10 @@ export function Navbar() {
         {/* Action Buttons */}
         <div className="hidden sm:flex items-center gap-3">
           <a
-            href="https://github.com/ayanbanerjee-png/Acctx"
+            href="https://github.com/RishiBose961/Acctx-Web"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-3.5 py-1.5 text-xs font-medium text-zinc-300 transition-all hover:bg-white/[0.08] hover:text-white"
+            className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/3 px-3.5 py-1.5 text-xs font-medium text-zinc-300 transition-all hover:bg-white/8 hover:text-white"
             aria-label="View Acctx repository on GitHub"
           >
             <GithubIcon size={15} />

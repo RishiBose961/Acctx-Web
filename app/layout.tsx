@@ -45,7 +45,12 @@ export const metadata: Metadata = {
     "macOS finance tracker",
     "linux personal finance software",
   ],
-  authors: [{ name: "Ayan Banerjee", url: "https://github.com/ayanbanerjee-png" }],
+  authors: [
+    {
+      name: "Rishi Bose / Ayan Banerjee",
+      url: "https://github.com/RishiBose961",
+    },
+  ],
   creator: "Acctx Team",
   publisher: "Acctx",
   alternates: {
@@ -98,7 +103,8 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: "Acctx",
-    operatingSystem: "Windows 10, Windows 11, macOS 12+, Linux (Ubuntu, Debian, Fedora, Arch)",
+    operatingSystem:
+      "Windows 10, Windows 11, macOS 12+, Linux (Ubuntu, Debian, Fedora, Arch)",
     applicationCategory: "FinanceApplication",
     applicationSubCategory: "Personal Finance & Recurring Bill Tracker",
     softwareVersion: "1.0.0",
@@ -112,7 +118,8 @@ export default function RootLayout({
       availability: "https://schema.org/InStock",
     },
     downloadUrl: "https://github.com/ayanbanerjee-png/Acctx/releases",
-    screenshot: "https://res.cloudinary.com/nb1pqpkh/image/upload/v1793035677/Acctx_26-10-2026_19_51_24.png",
+    screenshot:
+      "https://res.cloudinary.com/nb1pqpkh/image/upload/v1793035677/Acctx_26-10-2026_19_51_24.png",
     featureList: [
       "100% Offline with Zero Network Telemetry",
       "Local AES-256-GCM Cryptographic Vault",
@@ -124,8 +131,8 @@ export default function RootLayout({
     ],
     author: {
       "@type": "Person",
-      name: "Ayan Banerjee",
-      url: "https://github.com/ayanbanerjee-png",
+      name: "Rishi Bose / Ayan Banerjee",
+      url: "https://github.com/RishiBose961",
     },
   };
 
@@ -134,7 +141,8 @@ export default function RootLayout({
     "@type": "WebSite",
     name: "Acctx",
     url: siteUrl,
-    description: "Private, offline-first personal finance and smart bill management desktop app.",
+    description:
+      "Private, offline-first personal finance and smart bill management desktop app.",
     publisher: {
       "@type": "Organization",
       name: "Acctx",

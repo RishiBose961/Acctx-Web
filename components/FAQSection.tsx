@@ -70,7 +70,7 @@ export function FAQSection() {
             <p className="text-xs sm:text-sm text-zinc-400 max-w-xl leading-relaxed">
               Can&apos;t find what you&apos;re looking for? Explore our comprehensive{" "}
               <a
-                href="https://github.com/ayanbanerjee-png/Acctx#readme"
+                href="https://github.com/RishiBose961/Acctx-Web#readme"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-emerald-400 underline underline-offset-2 hover:text-emerald-300 font-medium transition-colors"
@@ -79,7 +79,7 @@ export function FAQSection() {
               </a>{" "}
               or get direct help by{" "}
               <a
-                href="https://github.com/ayanbanerjee-png/Acctx/issues"
+                href="https://github.com/RishiBose961/Acctx-Web/issues"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-emerald-400 underline underline-offset-2 hover:text-emerald-300 font-medium transition-colors"
@@ -91,7 +91,7 @@ export function FAQSection() {
 
           <div className="flex items-center gap-3 shrink-0">
             <a
-              href="https://github.com/ayanbanerjee-png/Acctx"
+              href="https://github.com/RishiBose961/Acctx-Web"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-2.5 text-xs font-semibold text-zinc-200 transition-all hover:bg-white/[0.08] hover:text-white"
@@ -101,7 +101,7 @@ export function FAQSection() {
               <span>GitHub Docs</span>
             </a>
             <a
-              href="https://github.com/ayanbanerjee-png/Acctx/issues"
+              href="https://github.com/RishiBose961/Acctx-Web/issues"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 rounded-xl bg-emerald-500 px-4 py-2.5 text-xs font-bold text-black transition-all hover:bg-emerald-400 shadow-lg shadow-emerald-500/20"
