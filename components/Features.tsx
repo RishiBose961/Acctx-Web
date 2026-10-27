@@ -29,7 +29,7 @@ const features: FeatureItem[] = [
   {
     icon: HardDriveIcon,
     title: "100% Offline & Private Vault",
-    desc: "Your records never touch an external server or cloud provider. Encrypted with AES-256-GCM and stored in local binary BSON.",
+    desc: "Your records never touch an external server or cloud provider. Securely encrypted and stored entirely on your local drive.",
     tag: "Zero Cloud",
   },
   {
@@ -53,7 +53,7 @@ const features: FeatureItem[] = [
   {
     icon: DatabaseIcon,
     title: "1-Click Portable Backups",
-    desc: "Export and import your entire encrypted financial database with single-click BSON portability. Zero cloud lock-in.",
+    desc: "Export and import your entire encrypted financial database with a single click. Seamless local backups with zero cloud lock-in.",
     tag: "Sovereignty",
   },
 ];

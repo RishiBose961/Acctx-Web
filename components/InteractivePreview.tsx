@@ -171,7 +171,7 @@ export function InteractivePreview() {
               <span className="h-3 w-3 rounded-full bg-yellow-500/80 inline-block" />
               <span className="h-3 w-3 rounded-full bg-green-500/80 inline-block" />
               <span className="ml-3 text-xs font-mono font-medium text-zinc-400 hidden sm:inline-block">
-                Acctx Desktop — [AES-256 Encrypted Vault Active]
+                Acctx Desktop — [Encrypted Local Vault Active]
               </span>
             </div>
             <div className="flex items-center gap-3">
@@ -320,7 +320,7 @@ export function InteractivePreview() {
               </div>
               <h3 className="text-xl font-bold text-white">Acctx Security Lock</h3>
               <p className="text-xs text-zinc-400 mt-1 max-w-sm">
-                Enter your 6-digit Master PIN to decrypt your local AES-256 database. Brute-force protected.
+                Enter your 6-digit Master PIN to decrypt your local encrypted database. Brute-force protected.
               </p>
 
               {/* 6 Dots Indicator */}

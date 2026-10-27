@@ -28,13 +28,13 @@ export const metadata: Metadata = {
     template: "%s | Acctx Desktop",
   },
   description:
-    "Modern, 100% offline desktop personal finance application for Windows, macOS, and Linux. Master 6-digit PIN security, local AES-256 encryption, smart recurring bill cycles, zero cloud sync, and proactive notifications.",
+    "Modern, 100% offline desktop personal finance application for Windows, macOS, and Linux. Master 6-digit PIN security, secure local encryption, smart recurring bill cycles, zero cloud sync, and proactive notifications.",
   keywords: [
     "offline personal finance",
     "private expense tracker",
     "desktop budget app",
     "offline bill reminder",
-    "local AES-256 finance",
+    "local private finance",
     "money manager without cloud",
     "open source personal finance",
     "acctx finance",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     title: "Acctx — Private, Offline-First Personal Finance & Bill Manager",
     description:
-      "Take back control of your finances. 100% offline, local AES-256 encryption, Master PIN lockout, smart recurring bill automation, and zero cloud tracking.",
+      "Take back control of your finances. 100% offline, secure local encryption, Master PIN lockout, smart recurring bill automation, and zero cloud tracking.",
     siteName: "Acctx",
     images: [
       {
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Acctx — Private, Offline-First Personal Finance & Bill Manager",
     description:
-      "100% offline personal finance application for Windows, macOS, and Linux with local AES-256 encryption.",
+      "100% offline personal finance application for Windows, macOS, and Linux with secure local encryption.",
     images: ["/og-image.png"],
     creator: "@ayanbanerjee",
   },
@@ -103,31 +103,30 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: "Acctx",
-    operatingSystem:
-      "Windows 10, Windows 11, macOS 12+, Linux (Ubuntu, Debian, Fedora, Arch)",
+    operatingSystem: "Windows 10, Windows 11 (64-bit)",
     applicationCategory: "FinanceApplication",
     applicationSubCategory: "Personal Finance & Recurring Bill Tracker",
     softwareVersion: "1.0.0",
-    fileSize: "85MB",
+    fileSize: "102MB",
     description:
-      "Modern, 100% offline desktop personal finance & smart recurring bill manager with local AES-256 encryption, Master PIN authentication, and zero cloud telemetry.",
+      "Modern, 100% offline desktop personal finance & smart recurring bill manager with secure local encryption, Master PIN authentication, and zero cloud telemetry.",
     offers: {
       "@type": "Offer",
       price: "0",
       priceCurrency: "USD",
       availability: "https://schema.org/InStock",
     },
-    downloadUrl: "https://github.com/ayanbanerjee-png/Acctx/releases",
+    downloadUrl: "https://github.com/RishiBose961/Acctx/releases/tag/Acctx",
     screenshot:
       "https://res.cloudinary.com/nb1pqpkh/image/upload/v1793035677/Acctx_26-10-2026_19_51_24.png",
     featureList: [
       "100% Offline with Zero Network Telemetry",
-      "Local AES-256-GCM Cryptographic Vault",
+      "Secure Local Encrypted Vault",
       "Master 6-Digit PIN Security Lockout with Cooldown Timers",
       "Automated Recurring Bill Cycles and Advancement",
       "Native Desktop OS Urgency Notifications",
       "Visual Analytics and Cash Flow Momentum Trends",
-      "One-Click Portable Encrypted BSON Data Backups",
+      "One-Click Portable Encrypted Backups",
     ],
     author: {
       "@type": "Person",

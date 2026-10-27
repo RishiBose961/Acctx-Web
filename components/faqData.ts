@@ -10,7 +10,7 @@ export const faqs: FAQItem[] = [
   },
   {
     q: "How does the Master 6-digit PIN secure my data?",
-    a: "Your financial database is encrypted with military-grade AES-256-GCM. When you set a 6-digit PIN, it is salted and stretched locally using secure key derivation to generate the cryptographic vault key. Acctx also includes brute-force cooldown timers to prevent automated dictionary attacks.",
+    a: "Your financial database is encrypted locally on your device. When you set a 6-digit PIN, it is salted and stretched locally using secure key derivation to generate your vault key. Acctx also includes brute-force cooldown timers to prevent automated dictionary attacks.",
   },
   {
     q: "Is Acctx free or are there hidden subscriptions?",
@@ -22,10 +22,10 @@ export const faqs: FAQItem[] = [
   },
   {
     q: "How do I backup or transfer my data to a new computer?",
-    a: "Under Acctx Settings, you can click 'Export BSON Data' to save an encrypted, portable snapshot of your finances. On your new computer, simply choose 'Import BSON Data' and enter your PIN to restore everything instantly.",
+    a: "Under Acctx Settings, you can click 'Export Data' to save an encrypted, portable backup of your finances. On your new computer, simply choose 'Import Data' and enter your PIN to restore everything instantly.",
   },
   {
     q: "Which operating systems are supported?",
-    a: "Acctx is officially compiled and tested for Windows 10 & 11 (64-bit), macOS 12+ (Universal binary for Apple Silicon M-series and Intel), and Linux (via .AppImage and .deb packages).",
+    a: "Acctx v1.0.0 is officially released and available for Windows 10 & 11 (64-bit). macOS (Universal binary for Apple Silicon & Intel) and Linux (.AppImage) builds are currently in active development and will be available in upcoming releases.",
   },
 ];

@@ -28,7 +28,7 @@ const screenshots: ScreenshotItem[] = [
     description:
       "When launched, Acctx halts all data access behind a 6-digit cryptographic PIN. Supports on-screen virtual keypad or physical typing, with brute-force cooldown timers to neutralize automated dictionary attacks.",
     highlights: [
-      "AES-256-GCM local key derivation",
+      "Salted local key derivation",
       "Automated lockout cooldown timers",
       "Anti-shoulder surfing design",
     ],
