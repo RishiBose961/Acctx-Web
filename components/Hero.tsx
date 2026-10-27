@@ -20,66 +20,52 @@ interface PlatformInfo {
   ext: string;
   filename: string;
   badge: string;
+  available: boolean;
+  downloadUrl: string;
 }
 
 export function Hero() {
   const [platform, setPlatform] = useState<PlatformInfo>({
     os: "windows",
     label: "Download for Windows",
-    ext: ".exe (64-bit)",
-    filename: "Acctx-Setup-1.0.0.exe",
-    badge: "Windows 10 / 11",
+    ext: "Windows 10 / 11 (64-bit)",
+    filename: "Acctx-Windows-Setup.exe",
+    badge: "v1.0.0 (102 MB)",
+    available: true,
+    downloadUrl: "https://github.com/RishiBose961/Acctx/releases/download/Acctx/Acctx-Windows-Setup.exe",
   });
   const [dropdownOpen, setDropdownOpen] = useState(false);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const ua = window.navigator.userAgent.toLowerCase();
-      if (ua.includes("mac")) {
-        // eslint-disable-next-line react-hooks/set-state-in-effect
-        setPlatform({
-          os: "mac",
-          label: "Download for macOS",
-          ext: ".dmg (Universal)",
-          filename: "Acctx-1.0.0.dmg",
-          badge: "Apple Silicon & Intel",
-        });
-      } else if (ua.includes("linux")) {
-        setPlatform({
-          os: "linux",
-          label: "Download for Linux",
-          ext: ".AppImage",
-          filename: "Acctx-1.0.0.AppImage",
-          badge: "Ubuntu / Debian / Arch",
-        });
-      }
-    }
-  }, []);
 
   const selectOS = (os: "windows" | "mac" | "linux") => {
     if (os === "windows") {
       setPlatform({
         os: "windows",
         label: "Download for Windows",
-        ext: ".exe (64-bit)",
-        filename: "Acctx-Setup-1.0.0.exe",
-        badge: "Windows 10 / 11",
+        ext: "Windows 10 / 11 (64-bit)",
+        filename: "Acctx-Windows-Setup.exe",
+        badge: "v1.0.0 (102 MB)",
+        available: true,
+        downloadUrl: "https://github.com/RishiBose961/Acctx/releases/download/Acctx/Acctx-Windows-Setup.exe",
       });
     } else if (os === "mac") {
       setPlatform({
         os: "mac",
-        label: "Download for macOS",
-        ext: ".dmg (Universal)",
-        filename: "Acctx-1.0.0.dmg",
-        badge: "Apple Silicon & Intel",
+        label: "macOS Build Coming Soon",
+        ext: "In Development",
+        filename: "Acctx-macOS.dmg",
+        badge: "Coming Soon",
+        available: false,
+        downloadUrl: "#download",
       });
     } else {
       setPlatform({
         os: "linux",
-        label: "Download for Linux",
-        ext: ".AppImage",
-        filename: "Acctx-1.0.0.AppImage",
-        badge: "Ubuntu / Debian / Arch",
+        label: "Linux Build Coming Soon",
+        ext: "In Development",
+        filename: "Acctx-Linux.AppImage",
+        badge: "Coming Soon",
+        available: false,
+        downloadUrl: "#download",
       });
     }
     setDropdownOpen(false);
@@ -98,7 +84,7 @@ export function Hero() {
         <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-xs font-medium text-emerald-400 backdrop-blur-md mb-8 transition-all hover:bg-emerald-500/15 hover:border-emerald-500/40">
           <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-ping" />
           <SparklesIcon size={14} />
-          <span>Acctx v1.0 Desktop Available Now</span>
+          <span>Acctx v1.0.0 for Windows Available Now</span>
           <span className="text-emerald-300/40">•</span>
           <span className="text-zinc-300">100% Offline & Free</span>
         </div>
@@ -115,7 +101,7 @@ export function Hero() {
         <p className="mx-auto mt-6 max-w-2xl text-base text-zinc-400 sm:text-lg sm:leading-relaxed">
           Take total control of your money without exposing your bank accounts or expenses to cloud servers. 
           Protected by <strong className="font-semibold text-zinc-200">Master 6-digit PIN authentication</strong>, 
-          bank-grade and automatic recurring bill cycles.
+          <strong className="font-semibold text-zinc-200"> secure local encryption</strong>, and automatic recurring bill cycles.
         </p>
 
         {/* Main Download CTA Hub with OS Awareness */}
@@ -124,12 +110,16 @@ export function Hero() {
             {/* Primary Download Button */}
             <a
               id="hero-download-btn"
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative flex items-center justify-center gap-3.5 rounded-xl bg-linear-to-r from-emerald-500 to-teal-400 px-7 py-4 text-base font-bold text-black shadow-xl shadow-emerald-500/25 transition-all hover:from-emerald-400 hover:to-teal-300 hover:shadow-2xl hover:shadow-emerald-500/40 active:scale-95"
+              href={platform.downloadUrl}
+              target={platform.available ? "_blank" : undefined}
+              rel={platform.available ? "noopener noreferrer" : undefined}
+              className={`group relative flex items-center justify-center gap-3.5 rounded-xl px-7 py-4 text-base font-bold shadow-xl transition-all active:scale-95 ${
+                platform.available
+                  ? "bg-linear-to-r from-emerald-500 to-teal-400 text-black shadow-emerald-500/25 hover:from-emerald-400 hover:to-teal-300 hover:shadow-2xl hover:shadow-emerald-500/40"
+                  : "bg-white/10 text-white border border-white/15 hover:bg-white/15"
+              }`}
             >
-              <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-black/15 text-black">
+              <div className={`flex h-7 w-7 items-center justify-center rounded-lg ${platform.available ? "bg-black/15 text-black" : "bg-white/10 text-white"}`}>
                 {platform.os === "windows" && <WindowsIcon size={18} />}
                 {platform.os === "mac" && <AppleIcon size={18} />}
                 {platform.os === "linux" && <LinuxIcon size={18} />}
@@ -139,8 +129,8 @@ export function Hero() {
                   <span>{platform.label}</span>
                   <DownloadIcon size={16} className="transition-transform group-hover:translate-y-0.5" />
                 </div>
-                <span className="text-[11px] font-medium text-black/75">
-                  {platform.ext} • Free (~85 MB)
+                <span className={`text-[11px] font-medium ${platform.available ? "text-black/75" : "text-zinc-400"}`}>
+                  {platform.available ? `${platform.ext} • Free (102 MB)` : "In Development • Windows Available"}
                 </span>
               </div>
             </a>
@@ -159,7 +149,7 @@ export function Hero() {
               </button>
 
               {dropdownOpen && (
-                <div className="absolute left-1/2 sm:left-0 z-30 mt-2 w-56 -translate-x-1/2 sm:translate-x-0 rounded-xl border border-white/10 bg-[#12151f] p-1.5 shadow-2xl backdrop-blur-xl">
+                <div className="absolute left-1/2 sm:left-0 z-30 mt-2 w-64 -translate-x-1/2 sm:translate-x-0 rounded-xl border border-white/10 bg-[#12151f] p-1.5 shadow-2xl backdrop-blur-xl">
                   <button
                     type="button"
                     onClick={() => selectOS("windows")}
@@ -171,8 +161,11 @@ export function Hero() {
                   >
                     <WindowsIcon size={16} />
                     <div className="flex-1">
-                      <div>Windows (64-bit)</div>
-                      <div className="text-[10px] text-zinc-500">.exe Installer</div>
+                      <div className="flex items-center gap-1.5">
+                        <span>Windows (64-bit)</span>
+                        <span className="rounded bg-emerald-500/20 px-1.5 py-0.2 text-[9px] font-semibold text-emerald-400">Available</span>
+                      </div>
+                      <div className="text-[10px] text-zinc-500">.exe Installer • 102 MB</div>
                     </div>
                     {platform.os === "windows" && <CheckIcon size={14} />}
                   </button>
@@ -188,7 +181,10 @@ export function Hero() {
                   >
                     <AppleIcon size={16} />
                     <div className="flex-1">
-                      <div>macOS</div>
+                      <div className="flex items-center gap-1.5">
+                        <span>macOS</span>
+                        <span className="rounded bg-white/10 px-1.5 py-0.2 text-[9px] font-medium text-zinc-400">Soon</span>
+                      </div>
                       <div className="text-[10px] text-zinc-500">Apple Silicon / Intel .dmg</div>
                     </div>
                     {platform.os === "mac" && <CheckIcon size={14} />}
@@ -205,7 +201,10 @@ export function Hero() {
                   >
                     <LinuxIcon size={16} />
                     <div className="flex-1">
-                      <div>Linux</div>
+                      <div className="flex items-center gap-1.5">
+                        <span>Linux</span>
+                        <span className="rounded bg-white/10 px-1.5 py-0.2 text-[9px] font-medium text-zinc-400">Soon</span>
+                      </div>
                       <div className="text-[10px] text-zinc-500">.AppImage / .deb</div>
                     </div>
                     {platform.os === "linux" && <CheckIcon size={14} />}
@@ -235,7 +234,7 @@ export function Hero() {
           </div>
           <div className="flex items-center gap-2">
             <LockIcon size={15} className="text-emerald-400" />
-            <span>AES-256 Encrypted Vault</span>
+            <span>Secure Encrypted Vault</span>
           </div>
           <div className="flex items-center gap-2">
             <ShieldIcon size={15} className="text-emerald-400" />

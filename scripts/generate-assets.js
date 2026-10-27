@@ -65,7 +65,7 @@ async function generateAssets() {
     
     <!-- Subtitle -->
     <text x="0" y="160" fill="#a1a1aa" font-family="sans-serif" font-size="20" font-weight="400">
-      <tspan x="0" dy="0">Bank-grade local AES-256 encryption. Master 6-digit PIN lockout.</tspan>
+      <tspan x="0" dy="0">Secure local offline encryption. Master 6-digit PIN lockout.</tspan>
       <tspan x="0" dy="32">Zero cloud tracking. Complete data sovereignty for Windows, macOS, and Linux.</tspan>
     </text>
   </g>
@@ -74,7 +74,7 @@ async function generateAssets() {
   <g transform="translate(80, 490)">
     <!-- Tag 1 -->
     <rect x="0" y="0" width="180" height="44" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
-    <text x="20" y="27" fill="#e4e4e7" font-family="sans-serif" font-size="14" font-weight="600">✓ AES-256 Vault</text>
+    <text x="20" y="27" fill="#e4e4e7" font-family="sans-serif" font-size="14" font-weight="600">✓ Encrypted Vault</text>
     
     <!-- Tag 2 -->
     <rect x="200" y="0" width="210" height="44" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>

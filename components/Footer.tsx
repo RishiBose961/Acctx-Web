@@ -127,7 +127,7 @@ export function Footer() {
                 </li>
                 <li>
                   <a
-                    href="https://github.com/RishiBose961/Acctx-Web/releases"
+                    href="https://github.com/RishiBose961/Acctx/releases/tag/Acctx"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-white transition-colors flex items-center gap-1.5"
