@@ -116,7 +116,7 @@ export function Footer() {
               <ul className="space-y-2">
                 <li>
                   <a
-                    href="https://github.com/ayanbanerjee-png/Acctx"
+                    href="https://github.com/RishiBose961/Acctx-Web"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-white transition-colors flex items-center gap-1.5"
@@ -127,7 +127,7 @@ export function Footer() {
                 </li>
                 <li>
                   <a
-                    href="https://github.com/RishiBose961/Acctx/releases/tag/Acctx"
+                    href="https://github.com/RishiBose961/Acctx-Web/releases/tag/Acctx_PRE"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-white transition-colors flex items-center gap-1.5"

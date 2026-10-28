@@ -83,7 +83,7 @@ export function SecurityShowcase() {
                     <ShieldIcon size={18} />
                   </div>
                   <div>
-                    <div className="text-xs font-bold text-white">2.  Cipher</div>
+                    <div className="text-xs font-bold text-white">2. Authenticated Cipher</div>
                     <div className="text-[11px] text-zinc-400">Military-grade authenticated encryption</div>
                   </div>
                 </div>
