@@ -1,16 +1,14 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 "use client";
 
 import { useEffect, useRef, useState } from "react";
 import {
-  BellIcon,
-  CheckCircle2Icon,
-  CheckIcon,
-  EyeIcon,
-  EyeOffIcon,
-  LockIcon,
-  RefreshCwIcon,
-  ShieldIcon,
-  SparklesIcon,
+    BellIcon,
+    CheckCircle2Icon,
+    EyeIcon,
+    EyeOffIcon,
+    LockIcon,
+    SparklesIcon
 } from "./icons";
 
 type TabType = "dashboard" | "pin" | "bills" | "notifications" | "analytics";
@@ -20,6 +18,7 @@ function useAnimatedCount(targetValue: number, durationMs = 1500, trigger = true
 
   useEffect(() => {
     if (!trigger) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setCurrentValue(0);
       return;
     }

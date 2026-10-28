@@ -29,10 +29,10 @@ export function Hero() {
     os: "windows",
     label: "Download for Windows",
     ext: "Windows 10 / 11 (64-bit)",
-    filename: "Acctx-Windows-Setup.exe",
+    filename: "Acctx-Windows-1.0.1-Setup.exe",
     badge: "v1.0.0 (102 MB)",
     available: true,
-    downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/download/Acctx_PRE/Acctx-Windows-Setup.exe",
+    downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/download/Acctx101/Acctx-Windows-1.0.1-Setup.exe",
   });
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
