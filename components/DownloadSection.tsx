@@ -72,7 +72,7 @@ export function DownloadSection() {
             Download Acctx for Your Desktop
           </h2>
           <p className="mt-4 text-base text-zinc-400">
-            Free forever, open-source, and offline. Windows v1.0.0 is available now. macOS and Linux builds are currently in development.
+            Free forever, open-source, and offline. Windows v1.0.2 is available now. macOS and Linux builds are currently in development.
           </p>
         </div>
 
