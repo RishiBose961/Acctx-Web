@@ -150,7 +150,7 @@ export function DesktopGallery() {
                 className={`group flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs font-semibold transition-all ${
                   isSelected
                     ? "bg-emerald-500 text-black shadow-lg shadow-emerald-500/20"
-                    : "bg-white/[0.03] text-zinc-400 border border-white/[0.06] hover:bg-white/[0.08] hover:text-white"
+                    : "bg-white/3 text-zinc-400 border border-white/6 hover:bg-white/8 hover:text-white"
                 }`}
               >
                 <span
@@ -169,7 +169,7 @@ export function DesktopGallery() {
         {/* Screenshot Frame Showcase */}
         <figure className="mx-auto max-w-5xl rounded-2xl border border-white/10 bg-[#0c0e17] shadow-2xl overflow-hidden backdrop-blur-xl">
           {/* Desktop Titlebar Mockup Header */}
-          <div className="flex items-center justify-between border-b border-white/[0.08] bg-[#090b12] px-4 py-3">
+          <div className="flex items-center justify-between border-b border-white/8 bg-[#090b12] px-4 py-3">
             <div className="flex items-center gap-2">
               <span className="h-3 w-3 rounded-full bg-red-500/80 inline-block" />
               <span className="h-3 w-3 rounded-full bg-yellow-500/80 inline-block" />
@@ -182,7 +182,7 @@ export function DesktopGallery() {
               <button
                 type="button"
                 onClick={() => setIsZoomOpen(true)}
-                className="flex items-center gap-1 rounded bg-white/[0.04] px-2.5 py-1 text-[11px] font-medium text-zinc-300 border border-white/10 hover:bg-white/10 hover:text-white transition-colors"
+                className="flex items-center gap-1 rounded bg-white/4 px-2.5 py-1 text-[11px] font-medium text-zinc-300 border border-white/10 hover:bg-white/10 hover:text-white transition-colors"
                 title="Expand Fullscreen Capture"
               >
                 <span>Full Resolution</span>
@@ -193,7 +193,7 @@ export function DesktopGallery() {
 
           {/* Screenshot Image Container */}
           <div
-            className="relative cursor-pointer overflow-hidden bg-black/40 group aspect-[16/10] sm:aspect-[16/9.5]"
+            className="relative cursor-pointer overflow-hidden bg-black/40 group aspect-16/10 sm:aspect-16/9.5"
             onClick={() => setIsZoomOpen(true)}
           >
             <Image
@@ -213,7 +213,7 @@ export function DesktopGallery() {
           </div>
 
           {/* Caption & Feature Breakdown */}
-          <figcaption className="border-t border-white/[0.08] bg-[#090c14] p-6 sm:p-8">
+          <figcaption className="border-t border-white/8 bg-[#090c14] p-6 sm:p-8">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div>
                 <div className="flex items-center gap-2 mb-2">
@@ -230,7 +230,7 @@ export function DesktopGallery() {
               </div>
 
               {/* Highlights List */}
-              <div className="flex flex-col gap-1.5 border-t border-white/[0.06] pt-4 md:border-t-0 md:pt-0 shrink-0">
+              <div className="flex flex-col gap-1.5 border-t border-white/6 pt-4 md:border-t-0 md:pt-0 shrink-0">
                 {current.highlights.map((h, i) => (
                   <div key={i} className="flex items-center gap-2 text-xs text-zinc-300">
                     <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
@@ -264,7 +264,7 @@ export function DesktopGallery() {
                   Close ✕
                 </button>
               </div>
-              <div className="relative aspect-[16/10] w-full">
+              <div className="relative aspect-16/10 w-full">
                 <Image
                   src={current.src}
                   alt={current.alt}
