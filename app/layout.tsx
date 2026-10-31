@@ -116,7 +116,7 @@ export default function RootLayout({
       priceCurrency: "USD",
       availability: "https://schema.org/InStock",
     },
-    downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/tag/Acctx_PRE",
+    downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases",
     screenshot:
       "https://res.cloudinary.com/nb1pqpkh/image/upload/v1793035677/Acctx_26-10-2026_19_51_24.png",
     featureList: [

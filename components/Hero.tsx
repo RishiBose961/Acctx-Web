@@ -32,7 +32,7 @@ export function Hero() {
     filename: "Acctx-Windows-Setup.exe",
     badge: "v1.0.0 (102 MB)",
     available: true,
-    downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/download/Acctx_PRE/Acctx-Windows-Setup.exe",
+    downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases",
   });
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -45,7 +45,7 @@ export function Hero() {
         filename: "Acctx-Windows-Setup.exe",
         badge: "v1.0.0 (102 MB)",
         available: true,
-        downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/download/Acctx_PRE/Acctx-Windows-Setup.exe",
+        downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases",
       });
     } else if (os === "mac") {
       setPlatform({

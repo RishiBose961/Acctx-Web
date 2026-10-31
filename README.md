@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/RishiBose961/Acctx-Web/releases/tag/Acctx_PRE"><img src="https://img.shields.io/badge/Release_Tag-Acctx__PRE-emerald?style=flat-square" alt="Release Tag: Acctx_PRE" /></a>
+  <a href="https://github.com/RishiBose961/Acctx-Web/releases"><img src="https://img.shields.io/badge/Releases-GitHub-emerald?style=flat-square" alt="GitHub Releases" /></a>
   <a href="https://nextjs.org"><img src="https://img.shields.io/badge/Next.js-16.4_(Turbopack)-black?style=flat-square&logo=next.js" alt="Next.js 16" /></a>
   <a href="https://react.dev"><img src="https://img.shields.io/badge/React-19.3-0284c7?style=flat-square&logo=react" alt="React 19" /></a>
   <a href="https://tailwindcss.com"><img src="https://img.shields.io/badge/Tailwind_CSS-v4.0-0ea5e9?style=flat-square&logo=tailwind-css" alt="Tailwind CSS 4" /></a>
@@ -54,7 +54,7 @@ flowchart TD
         NextApp --> SocialCards["Custom 1200x630 OpenGraph\n(scripts/generate-assets.js)"]
     end
 
-    OSEngine --> GitHubReleases["Direct CDN Stream\n(GitHub Release: Acctx_PRE)"]
+    OSEngine --> GitHubReleases["Direct GitHub Releases Stream\n(GitHub Releases)"]
 ```
 
 ### 1. Intelligent OS-Aware Release Router
@@ -147,8 +147,8 @@ npm run generate:assets
 
 All landing page download CTAs link to the official binaries released on GitHub:
 
-- **Release Tag**: [`Acctx_PRE`](https://github.com/RishiBose961/Acctx-Web/releases/tag/Acctx_PRE)
-- **Direct Windows Setup**: [`Acctx-Windows-Setup.exe`](https://github.com/RishiBose961/Acctx-Web/releases/download/Acctx_PRE/Acctx-Windows-Setup.exe) (102 MB)
+- **Official Releases**: [`https://github.com/RishiBose961/Acctx-Web/releases`](https://github.com/RishiBose961/Acctx-Web/releases)
+- **Windows Setup**: Available under the latest release assets (.exe)
 - **Repository Integration**: Connects directly to issues, discussions, and release telemetry.
 
 ---
