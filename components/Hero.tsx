@@ -29,10 +29,10 @@ export function Hero() {
     os: "windows",
     label: "Download for Windows",
     ext: "Windows 10 / 11 (64-bit)",
-    filename: "Acctx-Windows-1.0.1-Setup.exe",
-    badge: "v1.0.0 (102 MB)",
+    filename: "Acctx-Windows-1.0.2-Setup.exe",
+    badge: "v1.0.2 (102 MB)",
     available: true,
-    downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases",
+    downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/download/Acctx102/Acctx-Windows-1.0.2-Setup.exe",
   });
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -42,10 +42,10 @@ export function Hero() {
         os: "windows",
         label: "Download for Windows",
         ext: "Windows 10 / 11 (64-bit)",
-        filename: "Acctx-Windows-Setup.exe",
-        badge: "v1.0.0 (102 MB)",
+        filename: "Acctx-Windows-1.0.2-Setup.exe",
+        badge: "v1.0.2 (102 MB)",
         available: true,
-        downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases",
+        downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/download/Acctx102/Acctx-Windows-1.0.2-Setup.exe",
       });
     } else if (os === "mac") {
       setPlatform({
@@ -84,7 +84,7 @@ export function Hero() {
         <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-xs font-medium text-emerald-400 backdrop-blur-md mb-8 transition-all hover:bg-emerald-500/15 hover:border-emerald-500/40">
           <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-ping" />
           <SparklesIcon size={14} />
-          <span>Acctx v1.0.0 for Windows Available Now</span>
+          <span>Acctx v1.0.2 for Windows Available Now</span>
           <span className="text-emerald-300/40">•</span>
           <span className="text-zinc-300">100% Offline & Free</span>
         </div>
