@@ -54,7 +54,11 @@ const platforms = [
   },
 ];
 
-export function DownloadSection() {
+interface DownloadSectionProps {
+  downloads?: number;
+}
+
+export function DownloadSection({ downloads = 20 }: DownloadSectionProps) {
   return (
     <section id="download" className="relative py-20 sm:py-28 overflow-hidden bg-[#0a0c13]">
       {/* Background Glow */}
@@ -119,6 +123,12 @@ export function DownloadSection() {
                       <span className="text-zinc-500">File Size:</span>
                       <span className="font-mono text-white">{p.size}</span>
                     </div>
+                    {p.available && (
+                      <div className="flex items-center justify-between">
+                        <span className="text-zinc-500">Total Downloads:</span>
+                        <span className="font-mono text-emerald-400 font-semibold">{downloads}+</span>
+                      </div>
+                    )}
                     <div className="flex items-center justify-between">
                       <span className="text-zinc-500">Data Storage:</span>
                       <span className="text-emerald-400 font-medium">100% Offline Vault</span>
