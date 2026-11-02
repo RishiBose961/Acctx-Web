@@ -24,7 +24,11 @@ interface PlatformInfo {
   downloadUrl: string;
 }
 
-export function Hero() {
+interface HeroProps {
+  downloads?: number;
+}
+
+export function Hero({ downloads = 20 }: HeroProps) {
   const [platform, setPlatform] = useState<PlatformInfo>({
     os: "windows",
     label: "Download for Windows",
@@ -224,6 +228,16 @@ export function Hero() {
               Try In Browser
             </span>
           </a>
+        </div>
+
+        {/* Social Proof Download Metric */}
+        <div className="mt-5 flex items-center justify-center gap-2 text-xs font-medium text-zinc-400">
+          <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+          <span>
+            <strong className="text-zinc-200 font-semibold">{downloads}+</strong> downloads on GitHub
+          </span>
+          <span className="text-zinc-600">•</span>
+          <span>100% Free &amp; Open Source</span>
         </div>
 
         {/* Trust Badges Bar */}
