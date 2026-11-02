@@ -5,7 +5,7 @@ export async function getGitHubDownloads(): Promise<number> {
         "User-Agent": "Acctx-Web",
         Accept: "application/vnd.github.v3+json",
       },
-      next: { revalidate: 3600 },
+      next: { revalidate: 900 }, // Refreshes every 15 minutes
     });
 
     if (!res.ok) {
