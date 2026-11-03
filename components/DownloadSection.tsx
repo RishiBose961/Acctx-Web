@@ -12,15 +12,15 @@ import {
 const platforms = [
   {
     name: "Windows",
-    version: "v1.0.2 (Latest)",
+    version: "v1.0.3 (Latest)",
     req: "Windows 10 / 11 (64-bit)",
     format: "Setup Installer (.exe)",
     size: "102 MB",
     icon: WindowsIcon,
     featured: true,
     available: true,
-    downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/download/Acctx102/Acctx-Windows-1.0.2-Setup.exe",
-    releaseUrl: "https://github.com/RishiBose961/Acctx-Web/releases/tag/Acctx102",
+    downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/download/Acctx103/Acctx-Windows-1.0.3-Setup.exe",
+    releaseUrl: "https://github.com/RishiBose961/Acctx-Web/releases/tag/Acctx103",
     btnLabel: "Download for Windows (.exe)",
     altBtn: "View Release Notes & Checksum",
   },
@@ -33,8 +33,8 @@ const platforms = [
     icon: AppleIcon,
     featured: false,
     available: false,
-    downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/tag/Acctx102",
-    releaseUrl: "https://github.com/RishiBose961/Acctx-Web/releases/tag/Acctx102",
+    downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/tag/Acctx103",
+    releaseUrl: "https://github.com/RishiBose961/Acctx-Web/releases/tag/Acctx103",
     btnLabel: "macOS Build Coming Soon",
     altBtn: "Follow Releases on GitHub",
   },
@@ -47,8 +47,8 @@ const platforms = [
     icon: LinuxIcon,
     featured: false,
     available: false,
-    downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/tag/Acctx102",
-    releaseUrl: "https://github.com/RishiBose961/Acctx-Web/releases/tag/Acctx102",
+    downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/tag/Acctx103",
+    releaseUrl: "https://github.com/RishiBose961/Acctx-Web/releases/tag/Acctx103",
     btnLabel: "Linux Build Coming Soon",
     altBtn: "Follow Releases on GitHub",
   },
@@ -76,7 +76,7 @@ export function DownloadSection({ downloads = 20 }: DownloadSectionProps) {
             Download Acctx for Your Desktop
           </h2>
           <p className="mt-4 text-base text-zinc-400">
-            Free forever, open-source, and offline. Windows v1.0.2 is available now. macOS and Linux builds are currently in development.
+            Free forever, open-source, and offline. Windows v1.0.3 is available now. macOS and Linux builds are currently in development.
           </p>
         </div>
 
