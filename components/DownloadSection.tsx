@@ -19,24 +19,24 @@ const platforms = [
     icon: WindowsIcon,
     featured: true,
     available: true,
-    downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/download/Acctx105/Acctx-Windows-1.0.5-Setup.exe",
-    releaseUrl: "https://github.com/RishiBose961/Acctx-Web/releases/tag/Acctx105",
+    downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/download/Acctx115/Acctx-Windows-1.0.5-Setup.1.exe",
+    releaseUrl: "https://github.com/RishiBose961/Acctx-Web/releases/tag/Acctx115",
     btnLabel: "Download for Windows (.exe)",
     altBtn: "View Release Notes & Checksum",
   },
   {
     name: "macOS",
-    version: "Coming Soon",
+    version: "v1.1.5 (Latest)",
     req: "macOS 12+ (Apple Silicon & Intel)",
     format: "Disk Image (.dmg)",
-    size: "In Build",
+    size: "133 MB",
     icon: AppleIcon,
     featured: false,
-    available: false,
-    downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/tag/Acctx105",
-    releaseUrl: "https://github.com/RishiBose961/Acctx-Web/releases/tag/Acctx105",
-    btnLabel: "macOS Build Coming Soon",
-    altBtn: "Follow Releases on GitHub",
+    available: true,
+    downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/download/Acctx115/Acctx-Mac-1.1.5-Installer.dmg",
+    releaseUrl: "https://github.com/RishiBose961/Acctx-Web/releases/tag/Acctx115",
+    btnLabel: "Download for macOS (.dmg)",
+    altBtn: "View Release Notes & Checksum",
   },
   {
     name: "Linux",
@@ -47,8 +47,8 @@ const platforms = [
     icon: LinuxIcon,
     featured: false,
     available: false,
-    downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/tag/Acctx105",
-    releaseUrl: "https://github.com/RishiBose961/Acctx-Web/releases/tag/Acctx105",
+    downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/tag/Acctx115",
+    releaseUrl: "https://github.com/RishiBose961/Acctx-Web/releases/tag/Acctx115",
     btnLabel: "Linux Build Coming Soon",
     altBtn: "Follow Releases on GitHub",
   },
@@ -76,7 +76,7 @@ export function DownloadSection({ downloads = 20 }: DownloadSectionProps) {
             Download Acctx for Your Desktop
           </h2>
           <p className="mt-4 text-base text-zinc-400">
-            Free forever, open-source, and offline. Windows v1.0.5 is available now. macOS and Linux builds are currently in development.
+            Free forever, open-source, and offline. Windows and macOS builds are available now. Linux build is currently in development.
           </p>
         </div>
 

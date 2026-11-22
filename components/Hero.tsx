@@ -33,12 +33,21 @@ export function Hero({ downloads = 20 }: HeroProps) {
     os: "windows",
     label: "Download for Windows",
     ext: "Windows 10 / 11 (64-bit)",
-    filename: "Acctx-Windows-1.0.5-Setup.exe",
+    filename: "Acctx-Windows-1.0.5-Setup.1.exe",
     badge: "v1.0.5 (102 MB)",
     available: true,
-    downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/download/Acctx105/Acctx-Windows-1.0.5-Setup.exe",
+    downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/download/Acctx115/Acctx-Windows-1.0.5-Setup.1.exe",
   });
   const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && navigator.userAgent) {
+      const ua = navigator.userAgent.toLowerCase();
+      if (ua.includes("mac")) {
+        selectOS("mac");
+      }
+    }
+  }, []);
 
   const selectOS = (os: "windows" | "mac" | "linux") => {
     if (os === "windows") {
@@ -46,20 +55,20 @@ export function Hero({ downloads = 20 }: HeroProps) {
         os: "windows",
         label: "Download for Windows",
         ext: "Windows 10 / 11 (64-bit)",
-        filename: "Acctx-Windows-1.0.5-Setup.exe",
+        filename: "Acctx-Windows-1.0.5-Setup.1.exe",
         badge: "v1.0.5 (102 MB)",
         available: true,
-        downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/download/Acctx105/Acctx-Windows-1.0.5-Setup.exe",
+        downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/download/Acctx115/Acctx-Windows-1.0.5-Setup.1.exe",
       });
     } else if (os === "mac") {
       setPlatform({
         os: "mac",
-        label: "macOS Build Coming Soon",
-        ext: "In Development",
-        filename: "Acctx-macOS.dmg",
-        badge: "Coming Soon",
-        available: false,
-        downloadUrl: "#download",
+        label: "Download for macOS",
+        ext: "macOS 12+ (Apple Silicon & Intel)",
+        filename: "Acctx-Mac-1.1.5-Installer.dmg",
+        badge: "v1.1.5 (133 MB)",
+        available: true,
+        downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/download/Acctx115/Acctx-Mac-1.1.5-Installer.dmg",
       });
     } else {
       setPlatform({
@@ -88,7 +97,7 @@ export function Hero({ downloads = 20 }: HeroProps) {
         <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-xs font-medium text-emerald-400 backdrop-blur-md mb-8 transition-all hover:bg-emerald-500/15 hover:border-emerald-500/40">
           <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-ping" />
           <SparklesIcon size={14} />
-          <span>Acctx v1.0.5 for Windows Available Now</span>
+          <span>🎉 Acctx is Now Available on macOS (v1.1.5)</span>
           <span className="text-emerald-300/40">•</span>
           <span className="text-zinc-300">100% Offline & Free</span>
         </div>
@@ -187,9 +196,9 @@ export function Hero({ downloads = 20 }: HeroProps) {
                     <div className="flex-1">
                       <div className="flex items-center gap-1.5">
                         <span>macOS</span>
-                        <span className="rounded bg-white/10 px-1.5 py-0.2 text-[9px] font-medium text-zinc-400">Soon</span>
+                        <span className="rounded bg-emerald-500/20 px-1.5 py-0.2 text-[9px] font-semibold text-emerald-400">Available</span>
                       </div>
-                      <div className="text-[10px] text-zinc-500">Apple Silicon / Intel .dmg</div>
+                      <div className="text-[10px] text-zinc-500">.dmg Installer • 133 MB</div>
                     </div>
                     {platform.os === "mac" && <CheckIcon size={14} />}
                   </button>
