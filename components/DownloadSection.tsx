@@ -12,7 +12,7 @@ import {
 const platforms = [
   {
     name: "Windows",
-    version: "v1.0.5 (Latest)",
+    version: "v1.1.5 (Latest)",
     req: "Windows 10 / 11 (64-bit)",
     format: "Setup Installer (.exe)",
     size: "102 MB",
@@ -76,7 +76,7 @@ export function DownloadSection({ downloads = 20 }: DownloadSectionProps) {
             Download Acctx for Your Desktop
           </h2>
           <p className="mt-4 text-base text-zinc-400">
-            Free forever, open-source, and offline. Windows and macOS builds are available now. Linux build is currently in development.
+            Free forever, open-source, and offline. Windows and macOS v1.1.5 are available now. Linux build is currently in development.
           </p>
         </div>
 

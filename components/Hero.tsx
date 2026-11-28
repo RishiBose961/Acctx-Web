@@ -34,7 +34,7 @@ export function Hero({ downloads = 20 }: HeroProps) {
     label: "Download for Windows",
     ext: "Windows 10 / 11 (64-bit)",
     filename: "Acctx-Windows-1.0.5-Setup.1.exe",
-    badge: "v1.0.5 (102 MB)",
+    badge: "v1.1.5 (102 MB)",
     available: true,
     downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/download/Acctx115/Acctx-Windows-1.0.5-Setup.1.exe",
   });
@@ -56,7 +56,7 @@ export function Hero({ downloads = 20 }: HeroProps) {
         label: "Download for Windows",
         ext: "Windows 10 / 11 (64-bit)",
         filename: "Acctx-Windows-1.0.5-Setup.1.exe",
-        badge: "v1.0.5 (102 MB)",
+        badge: "v1.1.5 (102 MB)",
         available: true,
         downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/download/Acctx115/Acctx-Windows-1.0.5-Setup.1.exe",
       });
