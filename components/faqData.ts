@@ -26,6 +26,6 @@ export const faqs: FAQItem[] = [
   },
   {
     q: "Which operating systems are supported?",
-    a: "Acctx v1.1.5 is officially released and available for Windows 10 & 11 (64-bit) and macOS (Apple Silicon & Intel). Linux (.AppImage) builds are currently in active development and will be available in upcoming releases.",
+    a: "Acctx v2.1.1 is officially released and available for Windows 10 & 11 (64-bit), macOS (Apple Silicon & Intel), and Linux (.AppImage). All desktop platforms are fully supported with 100% offline security.",
   },
 ];

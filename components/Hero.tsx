@@ -33,10 +33,10 @@ export function Hero({ downloads = 20 }: HeroProps) {
     os: "windows",
     label: "Download for Windows",
     ext: "Windows 10 / 11 (64-bit)",
-    filename: "Acctx-Windows-1.0.5-Setup.1.exe",
-    badge: "v1.1.5 (102 MB)",
+    filename: "Acctx-Windows-2.1.1-Setup.exe",
+    badge: "v2.1.1 (139 MB)",
     available: true,
-    downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/download/Acctx115/Acctx-Windows-1.0.5-Setup.1.exe",
+    downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/download/Acctx211/Acctx-Windows-2.1.1-Setup.exe",
   });
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -45,6 +45,8 @@ export function Hero({ downloads = 20 }: HeroProps) {
       const ua = navigator.userAgent.toLowerCase();
       if (ua.includes("mac")) {
         selectOS("mac");
+      } else if (ua.includes("linux")) {
+        selectOS("linux");
       }
     }
   }, []);
@@ -55,30 +57,30 @@ export function Hero({ downloads = 20 }: HeroProps) {
         os: "windows",
         label: "Download for Windows",
         ext: "Windows 10 / 11 (64-bit)",
-        filename: "Acctx-Windows-1.0.5-Setup.1.exe",
-        badge: "v1.1.5 (102 MB)",
+        filename: "Acctx-Windows-2.1.1-Setup.exe",
+        badge: "v2.1.1 (139 MB)",
         available: true,
-        downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/download/Acctx115/Acctx-Windows-1.0.5-Setup.1.exe",
+        downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/download/Acctx211/Acctx-Windows-2.1.1-Setup.exe",
       });
     } else if (os === "mac") {
       setPlatform({
         os: "mac",
         label: "Download for macOS",
         ext: "macOS 12+ (Apple Silicon & Intel)",
-        filename: "Acctx-Mac-1.1.5-Installer.dmg",
-        badge: "v1.1.5 (133 MB)",
+        filename: "Acctx-Mac-2.1.1-Installer.dmg",
+        badge: "v2.1.1 (177 MB)",
         available: true,
-        downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/download/Acctx115/Acctx-Mac-1.1.5-Installer.dmg",
+        downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/download/Acctx211/Acctx-Mac-2.1.1-Installer.dmg",
       });
     } else {
       setPlatform({
         os: "linux",
-        label: "Linux Build Coming Soon",
-        ext: "In Development",
-        filename: "Acctx-Linux.AppImage",
-        badge: "Coming Soon",
-        available: false,
-        downloadUrl: "#download",
+        label: "Download for Linux",
+        ext: "Ubuntu, Debian, Fedora, Arch",
+        filename: "Acctx-Linux-2.1.1.AppImage",
+        badge: "v2.1.1 (194 MB)",
+        available: true,
+        downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/download/Acctx211/Acctx-Linux-2.1.1.AppImage",
       });
     }
     setDropdownOpen(false);
@@ -97,7 +99,7 @@ export function Hero({ downloads = 20 }: HeroProps) {
         <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-xs font-medium text-emerald-400 backdrop-blur-md mb-8 transition-all hover:bg-emerald-500/15 hover:border-emerald-500/40">
           <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-ping" />
           <SparklesIcon size={14} />
-          <span>🎉 Acctx is Now Available on macOS (v1.1.5)</span>
+          <span>🚀 Acctx v2.1.1 Now Available for Windows, macOS & Linux</span>
           <span className="text-emerald-300/40">•</span>
           <span className="text-zinc-300">100% Offline & Free</span>
         </div>
@@ -143,7 +145,7 @@ export function Hero({ downloads = 20 }: HeroProps) {
                   <DownloadIcon size={16} className="transition-transform group-hover:translate-y-0.5" />
                 </div>
                 <span className={`text-[11px] font-medium ${platform.available ? "text-black/75" : "text-zinc-400"}`}>
-                  {platform.available ? `${platform.ext} • Free (102 MB)` : "In Development • Windows Available"}
+                  {platform.available ? `${platform.ext} • Free (${platform.badge.split("(")[1] || "139 MB)"}` : "In Development • Available Soon"}
                 </span>
               </div>
             </a>
@@ -178,7 +180,7 @@ export function Hero({ downloads = 20 }: HeroProps) {
                         <span>Windows (64-bit)</span>
                         <span className="rounded bg-emerald-500/20 px-1.5 py-0.2 text-[9px] font-semibold text-emerald-400">Available</span>
                       </div>
-                      <div className="text-[10px] text-zinc-500">.exe Installer • 102 MB</div>
+                      <div className="text-[10px] text-zinc-500">.exe Installer • 139 MB</div>
                     </div>
                     {platform.os === "windows" && <CheckIcon size={14} />}
                   </button>
@@ -198,7 +200,7 @@ export function Hero({ downloads = 20 }: HeroProps) {
                         <span>macOS</span>
                         <span className="rounded bg-emerald-500/20 px-1.5 py-0.2 text-[9px] font-semibold text-emerald-400">Available</span>
                       </div>
-                      <div className="text-[10px] text-zinc-500">.dmg Installer • 133 MB</div>
+                      <div className="text-[10px] text-zinc-500">.dmg Installer • 177 MB</div>
                     </div>
                     {platform.os === "mac" && <CheckIcon size={14} />}
                   </button>
@@ -216,9 +218,9 @@ export function Hero({ downloads = 20 }: HeroProps) {
                     <div className="flex-1">
                       <div className="flex items-center gap-1.5">
                         <span>Linux</span>
-                        <span className="rounded bg-white/10 px-1.5 py-0.2 text-[9px] font-medium text-zinc-400">Soon</span>
+                        <span className="rounded bg-emerald-500/20 px-1.5 py-0.2 text-[9px] font-semibold text-emerald-400">Available</span>
                       </div>
-                      <div className="text-[10px] text-zinc-500">.AppImage / .deb</div>
+                      <div className="text-[10px] text-zinc-500">.AppImage Standalone • 194 MB</div>
                     </div>
                     {platform.os === "linux" && <CheckIcon size={14} />}
                   </button>
