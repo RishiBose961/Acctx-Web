@@ -88,13 +88,13 @@ export function DownloadSection({ downloads = 20 }: DownloadSectionProps) {
               <div
                 key={idx}
                 className={`relative flex flex-col justify-between rounded-2xl border p-7 transition-all duration-300 ${
-                  p.featured
-                    ? "border-emerald-500/40 bg-gradient-to-b from-[#141b24] to-[#0e111a] shadow-2xl shadow-emerald-500/10 scale-105 z-10"
+                  p.available
+                    ? "border-emerald-500/30 bg-gradient-to-b from-[#141b24] to-[#0e111a] shadow-xl shadow-emerald-500/5 hover:border-emerald-500/50 hover:shadow-2xl hover:shadow-emerald-500/10"
                     : "border-white/10 bg-[#0e111a] hover:border-white/20"
                 }`}
               >
-                {p.featured && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-emerald-500 px-3 py-0.5 text-[10px] font-extrabold uppercase tracking-wider text-black">
+                {p.available && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-emerald-500 px-3 py-0.5 text-[10px] font-extrabold uppercase tracking-wider text-black shadow-md shadow-emerald-500/20">
                     Available Now
                   </div>
                 )}
