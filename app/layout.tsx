@@ -103,11 +103,11 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: "Acctx",
-    operatingSystem: "Windows 10, Windows 11 (64-bit), macOS 12+ (Apple Silicon & Intel)",
+    operatingSystem: "Windows 10, Windows 11 (64-bit), macOS 12+ (Apple Silicon & Intel), Linux (x86_64)",
     applicationCategory: "FinanceApplication",
     applicationSubCategory: "Personal Finance & Recurring Bill Tracker",
-    softwareVersion: "1.1.5",
-    fileSize: "102MB",
+    softwareVersion: "2.1.1",
+    fileSize: "139MB - 194MB",
     description:
       "Modern, 100% offline desktop personal finance & smart recurring bill manager with secure local encryption, Master PIN authentication, and zero cloud telemetry.",
     offers: {
@@ -116,7 +116,7 @@ export default function RootLayout({
       priceCurrency: "USD",
       availability: "https://schema.org/InStock",
     },
-    downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/tag/Acctx115",
+    downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/tag/Acctx211",
     screenshot:
       "https://res.cloudinary.com/nb1pqpkh/image/upload/v1793035677/Acctx_26-10-2026_19_51_24.png",
     featureList: [

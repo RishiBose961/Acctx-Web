@@ -12,45 +12,45 @@ import {
 const platforms = [
   {
     name: "Windows",
-    version: "v1.1.5 (Latest)",
+    version: "v2.1.1 (Latest)",
     req: "Windows 10 / 11 (64-bit)",
     format: "Setup Installer (.exe)",
-    size: "102 MB",
+    size: "139 MB",
     icon: WindowsIcon,
     featured: true,
     available: true,
-    downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/download/Acctx115/Acctx-Windows-1.0.5-Setup.1.exe",
-    releaseUrl: "https://github.com/RishiBose961/Acctx-Web/releases/tag/Acctx115",
+    downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/download/Acctx211/Acctx-Windows-2.1.1-Setup.exe",
+    releaseUrl: "https://github.com/RishiBose961/Acctx-Web/releases/tag/Acctx211",
     btnLabel: "Download for Windows (.exe)",
     altBtn: "View Release Notes & Checksum",
   },
   {
     name: "macOS",
-    version: "v1.1.5 (Latest)",
+    version: "v2.1.1 (Latest)",
     req: "macOS 12+ (Apple Silicon & Intel)",
     format: "Disk Image (.dmg)",
-    size: "133 MB",
+    size: "177 MB",
     icon: AppleIcon,
     featured: false,
     available: true,
-    downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/download/Acctx115/Acctx-Mac-1.1.5-Installer.dmg",
-    releaseUrl: "https://github.com/RishiBose961/Acctx-Web/releases/tag/Acctx115",
+    downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/download/Acctx211/Acctx-Mac-2.1.1-Installer.dmg",
+    releaseUrl: "https://github.com/RishiBose961/Acctx-Web/releases/tag/Acctx211",
     btnLabel: "Download for macOS (.dmg)",
     altBtn: "View Release Notes & Checksum",
   },
   {
     name: "Linux",
-    version: "Coming Soon",
+    version: "v2.1.1 (Latest)",
     req: "Ubuntu, Debian, Fedora, Arch",
     format: "Standalone (.AppImage)",
-    size: "In Build",
+    size: "194 MB",
     icon: LinuxIcon,
     featured: false,
-    available: false,
-    downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/tag/Acctx115",
-    releaseUrl: "https://github.com/RishiBose961/Acctx-Web/releases/tag/Acctx115",
-    btnLabel: "Linux Build Coming Soon",
-    altBtn: "Follow Releases on GitHub",
+    available: true,
+    downloadUrl: "https://github.com/RishiBose961/Acctx-Web/releases/download/Acctx211/Acctx-Linux-2.1.1.AppImage",
+    releaseUrl: "https://github.com/RishiBose961/Acctx-Web/releases/tag/Acctx211",
+    btnLabel: "Download for Linux (.AppImage)",
+    altBtn: "View Release Notes & Checksum",
   },
 ];
 
@@ -76,7 +76,7 @@ export function DownloadSection({ downloads = 20 }: DownloadSectionProps) {
             Download Acctx for Your Desktop
           </h2>
           <p className="mt-4 text-base text-zinc-400">
-            Free forever, open-source, and offline. Windows and macOS v1.1.5 are available now. Linux build is currently in development.
+            Free forever, open-source, and offline. Windows, macOS, and Linux v2.1.1 are available now.
           </p>
         </div>
 

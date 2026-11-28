@@ -15,7 +15,7 @@ export function Footer() {
                 Acctx
               </span>
               <span className="rounded bg-white/10 px-1.5 py-0.5 text-[10px] font-mono text-zinc-300">
-                v1.1.5
+                v2.1.1
               </span>
             </div>
             <p className="mt-3 text-xs leading-relaxed text-zinc-400">
